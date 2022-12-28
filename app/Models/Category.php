@@ -10,7 +10,7 @@ class Category extends Model
     use HasFactory;
     /**
      * fillable
-     *
+     * 
      * @var array
      */
     protected $fillable = [

@@ -10,7 +10,7 @@ class Slider extends Model
     use HasFactory;    
     /**
      * fillable
-     *
+     * 
      * @var array
      */
     protected $fillable = [

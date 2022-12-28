@@ -18,7 +18,7 @@ class PlaceImage extends Model
     ];
     
     /**
-     * getImageAttribute
+     * getImageAttribute 
      * tujuannya agar saat manggil atribut image, agar dapat hasil full-path direktorinya
      * @param  mixed $image
      * @return void
