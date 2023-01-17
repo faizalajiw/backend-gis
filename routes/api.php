@@ -30,5 +30,9 @@ Route::prefix('admin')->group(function () {
 
         //route dashboard
         Route::get('/dashboard', App\Http\Controllers\Api\Admin\DashboardController::class, ['as' => 'admin']);
+
+        //categories resource
+        Route::apiResource('/categories', App\Http\Controllers\Api\Admin\CategoryController::class, ['except' => ['create', 'edit'], 'as' => 'admin']);
+
     });
 });
