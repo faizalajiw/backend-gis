@@ -43,7 +43,7 @@ class Place extends Model
      * images 
      * relasi one to many dari table place ke table places image
      * 1 place bisa memiliki banyak data place image
-     * @return void
+    //  * @return void
      */
     public function images()
     {
