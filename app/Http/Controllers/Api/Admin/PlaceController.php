@@ -83,7 +83,7 @@ class PlaceController extends Controller
                 //insert ke database
                 $place->images()->create([
                     'image'     => $image->hashName(),
-                    'palce_id'  => $place->id
+                    'place_id'  => $place->id
                 ]);
             }
         }
