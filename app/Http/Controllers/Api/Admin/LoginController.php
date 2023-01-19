@@ -21,7 +21,7 @@ class LoginController extends Controller
         //set validation
         $validator = Validator::make($request->all(), [
             'email'     => 'required|email',
-            'password'  => 'required|password'
+            'password'  => 'required'
         ]);
 
         //jika validation gagal
@@ -38,7 +38,7 @@ class LoginController extends Controller
             //return status code "400" dan login gagal
             return response()->json([
                 'success' => false,
-                'message' => 'Login Gagal!',
+                'message' => 'Password yang anda masukkan salah.',
             ], 400);
         }
 
