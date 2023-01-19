@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+//group route prefix admin
 Route::prefix('admin')->group(function () {
     //route login
     Route::post('/login', App\Http\Controllers\Api\Admin\LoginController::class, ['as' => 'admin']);
@@ -43,4 +43,13 @@ Route::prefix('admin')->group(function () {
         //users resource
         Route::apiResource('/users', App\Http\Controllers\Api\Admin\UserController::class, ['except' => ['create', 'edit'], 'as' => 'admin']);
     });
+});
+
+//group route prefix web
+Route::prefix('web')->group(function () {
+    //route categories index
+    Route::get('/categories', [App\Http\Controllers\Api\Web\CategoryController::class, 'index', ['as' => 'web']]);
+
+    //route categories show
+    Route::get('/categories/{slug?}', [App\Http\Controllers\Api\Web\CategoryController::class, 'show', ['as' => 'web']]);
 });
