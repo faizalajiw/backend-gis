@@ -22,7 +22,7 @@ class PlaceController extends Controller
         //get places
         $places = Place::with('category')->when(request()->q, function ($places) {
             $places = $places->where('title', 'like', '%' . request()->q . '%');
-        })->latest()->paginate(5);
+        })->latest()->paginate(10);
 
         //return with Api Resource
         return new PlaceResource(true, 'List Data Places', $places);
