@@ -32,16 +32,16 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', App\Http\Controllers\Api\Admin\DashboardController::class, ['as' => 'admin']);
 
         //categories resource
-        Route::apiResource('/categories', App\Http\Controllers\Api\Admin\CategoryController::class, ['except' => ['create', 'edit'], 'as' => 'admin']);
+        Route::apiResource('/categories', App\Http\Controllers\Api\Admin\CategoryController::class, ['as' => 'admin']);
 
         //places resource
-        Route::apiResource('/places', App\Http\Controllers\Api\Admin\PlaceController::class, ['except' => ['create', 'edit'], 'as' => 'admin']);
+        Route::apiResource('/places', App\Http\Controllers\Api\Admin\PlaceController::class, ['as' => 'admin']);
 
         //sliders resource
-        Route::apiResource('/sliders', App\Http\Controllers\Api\Admin\SliderController::class, ['except' => ['create', 'show', 'edit', 'update'], 'as' => 'admin']);
+        Route::apiResource('/sliders', App\Http\Controllers\Api\Admin\SliderController::class, ['as' => 'admin']);
 
         //users resource
-        Route::apiResource('/users', App\Http\Controllers\Api\Admin\UserController::class, ['except' => ['create', 'edit'], 'as' => 'admin']);
+        Route::apiResource('/users', App\Http\Controllers\Api\Admin\UserController::class, ['as' => 'admin']);
     });
 });
 
